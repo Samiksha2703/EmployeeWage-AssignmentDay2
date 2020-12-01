@@ -55,3 +55,14 @@ empHrs = getWorkingHours(empCheck);
 console.log(empHrs);
 empWage = empHrs * WAGE_PER_HOURS;
 console.log("Employee Wage : "+empWage);
+
+// UC4-MonthlyEmpWage
+
+const NUM_OF_WORKING_DAYS = 20;
+empHrs = 0;
+for (let day = 0; day < NUM_OF_WORKING_DAYS; day++){
+    empCheck = Math.floor(Math.random() * 10 ) % 3;
+    empHrs += getWorkingHours(empCheck);
+}
+empWage = empHrs * WAGE_PER_HOURS;
+console.log("Total Hrs : "+empHrs+ " Employee Wage for a Month "+empWage);
