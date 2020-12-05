@@ -204,3 +204,19 @@ console.log("Part Working Days: " + partWorkingDays);
 console.log("Non Working Days: " + nonWorkingDays);
 console.log("Showing Daily Hours Worked And Wage Earned : " + empDailyHrsAndWageArr);
 
+//UC 11A 
+let totalWage = empDailyHrsAndWageArr.filter(dailyHrsAndWage => dailyHrsAndWage.dailyWage > 0).reduce((totalWage, dailyHrsAndWage) => (totalWage += dailyHrsAndWage.dailyWage), 0);
+let totalHour = empDailyHrsAndWageArr.filter(dailyHrsAndWage => dailyHrsAndWage.dailyWage > 0).reduce((totalHour, dailyHrsAndWage) => (totalHour += dailyHrsAndWage.dailyHours), 0);
+console.log("Total Hours : " + totalHour + " Total Wage :" + totalWage);
+
+//UC 11B
+process.stdout.write("Logging Full Working Days");
+empDailyHrsAndWageArr.filter(dailyHrsAndWage => dailyHrsAndWage.dailyHours == 8).forEach(dailyHrsAndWage => process.stdout.write(dailyHrsAndWage.toString()));
+
+//UC 11C
+let partWorkingDayStrArr = empDailyHrsAndWageArr.filter(dailyHrsAndWage => dailyHrsAndWage.dailyHours == 4).map(dailyHrsAndWage => dailyHrsAndWage.toString());
+console.log(" PartWorkingDaysString : " + partWorkingDayStrArr);
+
+//UC 11D
+let nonWorkingDayNums = nonWorkingDays.filter(dailyHrsAndWage => dailyHrsAndWage.dailyHours == 0).map(dailyHrsAndWage => dailyHrsAndWage.dayNum);
+console.log("NonWorkingDayNums : " + nonWorkingDayNums);
