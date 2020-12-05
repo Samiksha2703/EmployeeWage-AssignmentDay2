@@ -1,0 +1,19 @@
+{
+  "name": "assignmentday2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "EmployeeWage.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Samiksha2703/EmployeeWage-AssignmentDay2.git"
+  },
+  "author": "Samiksha Shende",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Samiksha2703/EmployeeWage-AssignmentDay2/issues"
+  },
+  "homepage": "https://github.com/Samiksha2703/EmployeeWage-AssignmentDay2#readme"
+}
