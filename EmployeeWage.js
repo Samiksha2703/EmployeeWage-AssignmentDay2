@@ -158,8 +158,19 @@ console.log("Check If Any Part Time Wage : " + mapDayWithWageArr.some(isAnyPartT
 function totalDaysWorked(numOfDays, dailyWage) {
     if (dailyWage > 0)
         return numOfDays + 1;
+        return numOfDays;
 }
 let numOfDays = 0;
 console.log("Number of Days Emp Worked : " + empDailyWageArr.reduce(totalDaysWorked, 0));
 
+//UC 8 - EmployeeWageMape 
 
+console.log(empDailyWageMap);
+
+function totalWages(totalWage, dailyWage) {
+    return totalWage + dailyWage;
+  }
+  console.log(
+    "Emp Wage Map totalHrs : " +
+      Array.from(empDailyWageMap.values()).reduce(totalWages, 0)
+  );
