@@ -174,3 +174,18 @@ function totalWages(totalWage, dailyWage) {
     "Emp Wage Map totalHrs : " +
       Array.from(empDailyWageMap.values()).reduce(totalWages, 0)
   );
+
+  //UC 9 - Emp Wage with Arrows
+const findTotal = (totalVal, dailyVal) => {
+    return totalVal + dailyVal;
+};
+
+let count = 0;
+empDailyHrsMap;
+let totalHours = Array.from(empDailyHrsMap.values()).reduce(findTotal, 0);
+let totalSalary = empDailyWageArr
+    .filter((dailyWage) => dailyWage > 0)
+    .reduce(findTotal, 0);
+console.log(
+    "Emp Wage with Arrow : " + " Total Hours : " + totalHours + " Total Wages : " + totalSalary);
+
