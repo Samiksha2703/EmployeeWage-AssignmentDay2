@@ -1,4 +1,4 @@
-class EmployeePayrollDataNew  {
+class EmployeePayRoll {
 
     id;
     salary;
@@ -17,19 +17,27 @@ class EmployeePayrollDataNew  {
         return this._name;
     }
     set name(name) {
-        this._name = name;
+        let nameRegex = RegExp('^[A-Z]{1}[a-z]{3,}$');
+        if (nameRegex.test(name))
+            this._name = name;
+        else throw 'Name is Incorrect!';
     }
 
     toString() {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        const empDate = this.startDate === undefined ? "undefined" : this.startDate.toLocaleDateString("en-US", options);
-        return "id=" + this.id + ", name=" + this.name + ",salary=" + this.salary + ", " + "gender=" + this.gender + ", startDate=" + empDate;
+        const empDate = !this.startDate ? "undefined" : this.startDate.toLocaleDateString("en-US", options);
+        return "id=" + this.id + ", name=" + this.name + ", salary=" + this.salary + ", " + "gender=" + this.gender + ", startDate=" + empDate;
     }
 }
 
-let employeePayrollDataNew = new EmployeePayrollDataNew(1, "Mark", 30000);
-console.log(employeePayrollDataNew.toString());
-employeePayrollDataNew.name = "John";
-console.log(employeePayrollDataNew.toString());
-let newEmployeePayrollDataNew = new EmployeePayrollDataNew(1, "Terissa", 30000, "F", new Date());
-console.log(newEmployeePayrollDataNew.toString());
+let employeePayRoll = new EmployeePayRoll(1, "Mark", 30000);
+console.log(employeePayRoll.toString());
+try {
+    employeePayRoll.name = "john";
+    console.log(employeePayRoll.toString());
+}
+catch (e) {
+    console.error(e);
+}
+let newEmployeePayRoll = new EmployeePayRoll(1, "Terrisa", 30000, "F", new Date());
+console.log(newEmployeePayRoll.toString());
